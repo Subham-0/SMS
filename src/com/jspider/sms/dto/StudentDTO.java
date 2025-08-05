@@ -6,6 +6,7 @@ public class StudentDTO {
     private String dob;
     private String skills;
     private String email;
+    private String mobile;
 
     public String getMobile() {
         return mobile;
@@ -22,8 +23,6 @@ public class StudentDTO {
     public void setEmail(String email) {
         this.email = email;
     }
-
-    private String mobile;
 
     public String getName() {
         return name;

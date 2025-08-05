@@ -7,6 +7,24 @@ public class StudentEntity {
     private String dob;
     private String skills;
     private boolean isActive;
+    private String mobNumber;
+    private String emailID;
+
+    public String getMobNumber() {
+        return mobNumber;
+    }
+
+    public void setMobNumber(String mobNumber) {
+        this.mobNumber = mobNumber;
+    }
+
+    public String getEmailID() {
+        return emailID;
+    }
+
+    public void setEmailID(String emailID) {
+        this.emailID = emailID;
+    }
 
     public int getSid() {
         return sid;

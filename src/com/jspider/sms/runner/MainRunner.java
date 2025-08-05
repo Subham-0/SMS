@@ -2,7 +2,10 @@ package com.jspider.sms.runner;
 
 import com.jspider.sms.dto.StudentDTO;
 import com.jspider.sms.services.StudentDTOValidator;
+import com.jspider.sms.services.StudentService;
+import com.jspider.sms.services.StudentServiceImpl;
 
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class MainRunner {
@@ -28,8 +31,10 @@ public class MainRunner {
         studentDTO.setEmail(input.next());
 
         try {
-            StudentDTOValidator.validateStudentDto(studentDTO);
-        } catch (IllegalArgumentException e) {
+//            StudentDTOValidator.validateStudentDto(studentDTO);
+            StudentService studentService = new StudentServiceImpl();
+            studentService.addStudent(studentDTO);
+        } catch (IllegalArgumentException | SQLException e) {
             System.err.println("Error : " + e.getMessage());
         }
 

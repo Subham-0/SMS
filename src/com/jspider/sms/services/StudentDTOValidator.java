@@ -14,7 +14,7 @@ public class StudentDTOValidator {
 
     private static void checkMobileNumber(StudentDTO studentDTO) {
         String mobileNumber = studentDTO.getMobile();
-        if (mobileNumber.length() == 10) {
+        if (mobileNumber.length() != 10) {
             throw new IllegalArgumentException("Mobile Number should be 10 digits");
         }
     }
