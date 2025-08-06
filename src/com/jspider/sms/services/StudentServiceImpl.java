@@ -29,4 +29,21 @@ public class StudentServiceImpl implements StudentService {
         studentDB.save(studentEntity);
 
     }
+
+    public void updateName(String name, int id, StudentDB studentDB) throws SQLException {
+        if (name.length() < 4) {
+            throw new IllegalArgumentException("Name should be minimum 4 chars : " + name);
+        }
+        System.out.println(studentDB.getNameById(id) + " updated to " + name);
+        studentDB.updateNameById(id, name);
+    }
+
+    public void updateDeptNo(int deptNo, int id, StudentDB studentDB) throws SQLException {
+        if (deptNo <= 0) {
+            throw new IllegalArgumentException("Invalid Dept No : " + deptNo);
+        }
+        System.out.println(studentDB.getDeptnoById(id) + " updated to " + deptNo);
+        studentDB.updateDeptnoById(id, deptNo);
+    }
+
 }
